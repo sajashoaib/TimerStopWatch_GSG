@@ -110,3 +110,62 @@
   .hidden {
     display: none;
   }
+  /* responsive */
+@media (max-width: 600px) {
+    .container {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      border-radius: 0;
+      padding: 0 20px;
+    }
+  
+    .content h3 {
+      font-size: 16px;
+    }
+  
+    .main-wrapper {
+      padding: 20px 0;
+    }
+  
+    .main div {
+      width: 15%;
+    }
+  
+    .main .number {
+      font-size: 50px;
+    }
+  
+    .main .colon {
+      font-size: 16px;
+    }
+  
+  
+  }
+  
+  @media (max-width: 400px) {
+    .container {
+      padding: 0 10px;
+    }
+  
+    .content h3 {
+      font-size: 14px;
+    }
+  
+    .main-wrapper {
+      padding: 10px 0;
+    }
+  
+    .main-wrapper .head {
+      padding: 0 20px;
+    }
+  
+    .main .number {
+      font-size: 40px;
+    }
+  
+    .main .colon {
+      font-size: 12px;
+    }
+  }
