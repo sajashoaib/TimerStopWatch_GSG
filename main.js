@@ -61,3 +61,16 @@ function displayStopwatch() {
 function formatTime(time) {
     return time.toString().padStart(2, '0');
 }
+document.getElementById('stopwatch-btn').addEventListener('click', function () {
+    document.querySelector('.timer').classList.add('hidden');
+    document.querySelector('.stopwatch').classList.remove('hidden');
+});
+
+document.getElementById('timer-btn').addEventListener('click', function () {
+    document.querySelector('.stopwatch').classList.add('hidden');
+    document.querySelector('.timer').classList.remove('hidden');
+});
+
+document.querySelector('.start-stopwatch').addEventListener('click', startStopwatch);
+document.querySelector('.reset-stopwatch').addEventListener('click', resetStopwatch);
+displayStopwatch();
