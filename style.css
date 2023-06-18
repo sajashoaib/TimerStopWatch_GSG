@@ -36,4 +36,44 @@
     font-weight: 500;
     margin-bottom: 25px;
     text-align: center;
+  }
+  .wrapper {
+    padding: 30px 0;
+    border-radius: 10px;
+    margin-top: 15px;
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(1.5px);
+    -webkit-backdrop-filter: blur(1.5px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    transition: all 0.3s ease;
+  }
+  
+  .wrapper:hover {
+    box-shadow: none;
+  }
+  
+  .main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .main div {
+    width: 20%;
+    text-align: center;
+  }
+  
+  .main .number {
+    position: relative;
+    font-size: 60px;
+    font-weight: 400;
+    line-height: 1;
+    color: #fff;
+  }
+  
+  .main .colon {
+    font-size: 20px;
   }  
