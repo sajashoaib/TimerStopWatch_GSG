@@ -74,3 +74,64 @@ document.getElementById('timer-btn').addEventListener('click', function () {
 document.querySelector('.start-stopwatch').addEventListener('click', startStopwatch);
 document.querySelector('.reset-stopwatch').addEventListener('click', resetStopwatch);
 displayStopwatch();
+
+function startTimer() {
+    const input = prompt('Enter the duration for the timer in HH:MM:SS format:');
+    const [hours, minutes, seconds] = input.split(':').map(Number);
+
+    if (!isNaN(hours) && !isNaN(minutes) && !isNaN(seconds)) {
+        timerHours = hours;
+        timerMinutes = minutes;
+        timerSeconds = seconds;
+
+        displayTimer();
+        timerInterval = setInterval(updateTimer, 1000);
+        document.querySelector('.start-timer').classList.add('hidden');
+        document.querySelector('.stop-timer').classList.remove('hidden');
+    } else {
+        alert('Invalid input! Please enter a valid duration in HH:MM:SS format.');
+    }
+}
+
+function updateTimer() {
+    if (timerHours === 0 && timerMinutes === 0 && timerSeconds === 0) {
+        stopTimer();
+        return;
+    }
+
+    if (timerSeconds === 0) {
+        if (timerMinutes === 0) {
+            timerHours--;
+            timerMinutes = 59;
+            timerSeconds = 59;
+        } else {
+            timerMinutes--;
+            timerSeconds = 59;
+        }
+    } else {
+        timerSeconds--;
+    }
+
+    displayTimer();
+}
+
+function stopTimer() {
+    clearInterval(timerInterval);
+    document.querySelector('.start-timer').classList.remove('hidden');
+    document.querySelector('.stop-timer').classList.add('hidden');
+}
+
+function resetTimer() {
+    clearInterval(timerInterval);
+    timerHours = 0;
+    timerMinutes = 0;
+    timerSeconds = 0;
+    displayTimer();
+    document.querySelector('.start-timer').classList.remove('hidden');
+    document.querySelector('.stop-timer').classList.add('hidden');
+}
+
+function displayTimer() {
+    hourElem.textContent = formatTime(timerHours);
+    minElem.textContent = formatTime(timerMinutes);
+    secElem.textContent = formatTime(timerSeconds);
