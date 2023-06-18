@@ -135,3 +135,9 @@ function displayTimer() {
     hourElem.textContent = formatTime(timerHours);
     minElem.textContent = formatTime(timerMinutes);
     secElem.textContent = formatTime(timerSeconds);
+}
+
+document.querySelector('.start-timer').addEventListener('click', startTimer);
+document.querySelector('.stop-timer').addEventListener('click', stopTimer);
+document.querySelector('.reset-timer').addEventListener('click', resetTimer);
+displayTimer();
